@@ -1,4 +1,4 @@
-const { supabase } = require('../../client')
+const { supabase } = require('../client')
 const addBusiness = async (req, res) => {
     const { business_id, business_name, business_category, business_contact, business_email, business_address, business_city, ubd_user_name, ubd_user_type, ubd_user_status  } = req.body || {};
     

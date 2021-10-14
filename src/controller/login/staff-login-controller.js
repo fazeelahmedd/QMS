@@ -1,4 +1,4 @@
-const { supabase } = require('../../../client')
+const { supabase } = require('../../client')
 const logInStaff =  async (req, res, email) => {
     const { user_name, password } = req.body || {};
     try{

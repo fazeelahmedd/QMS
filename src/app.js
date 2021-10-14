@@ -20,12 +20,19 @@ app.use((req, res, next) => {
   res.set('Access-Control-Allow-Origin', '*')
   next()
 })
-const loggedUsers =  require("./src/routes/LoggedInUsers-route")
-const login = require("./src/routes/login/login-route")
-const signup = require("./src/routes/signup-route")
-const logout = require("./src/routes/logout-route")
-const loginstaff = require("./src/routes/login/staff-login-route")
-const addBusiness = require("./src/routes/add-business-route")
+const loggedUsers =  require("./routes/LoggedInUsers-route")
+const login = require("./routes/login/login-route")
+const signup = require("./routes/signup-route")
+const logout = require("./routes/logout-route")
+const loginstaff = require("./routes/login/staff-login-route")
+const addBusiness = require("./routes/add-business-route")
+
+app.get("/health", (req, res, next) => {
+  res.status(200).json({
+    message: "OK"
+  })
+})
+
 app.use("/auth", loggedUsers)
 app.use("/auth", login)
 app.use("/auth",signup)
